@@ -1,4 +1,4 @@
-package org.rattencorp.AmpersandCharGen;
+package org.rattencorp.ampersandCharGen;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
