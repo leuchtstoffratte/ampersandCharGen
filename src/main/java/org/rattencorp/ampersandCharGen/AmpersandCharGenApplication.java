@@ -10,8 +10,11 @@ public class AmpersandCharGenApplication {
 
 	public static void main(String[] args) {
 
-		new SpringApplicationBuilder(AmpersandCharGenApplication.class, FristConfigClass.class, CoreSpringConfig.class)
+		var context = new SpringApplicationBuilder(AmpersandCharGenApplication.class, CoreSpringConfig.class)
 			.run(args);
+
+		for (String s : context.getBeanDefinitionNames())
+			System.out.println(s);
 
 	}
 
