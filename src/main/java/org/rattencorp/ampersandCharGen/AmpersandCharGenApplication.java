@@ -13,9 +13,6 @@ public class AmpersandCharGenApplication {
 		var context = new SpringApplicationBuilder(AmpersandCharGenApplication.class, CoreSpringConfig.class)
 			.run(args);
 
-		for (String s : context.getBeanDefinitionNames())
-			System.out.println(s);
-
 	}
 
 }
