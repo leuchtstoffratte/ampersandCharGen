@@ -1,6 +1,7 @@
 package org.rattencorp.ampersandCharGen;
 
-import org.rattencorp.belanglos.FristConfigClass;
+
+import org.rattencorp.ampersandCharGen.core.attributes.valuegens.AmpersandAttributeValueGeneratorConfig;
 import org.rattencorp.core.CoreSpringConfig;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -10,7 +11,7 @@ public class AmpersandCharGenApplication {
 
 	public static void main(String[] args) {
 
-		var context = new SpringApplicationBuilder(AmpersandCharGenApplication.class, CoreSpringConfig.class)
+		new SpringApplicationBuilder(AmpersandCharGenApplication.class, CoreSpringConfig.class, AmpersandAttributeValueGeneratorConfig.class)
 			.run(args);
 
 	}

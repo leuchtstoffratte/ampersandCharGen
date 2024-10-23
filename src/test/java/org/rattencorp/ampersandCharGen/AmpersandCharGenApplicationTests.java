@@ -1,10 +1,11 @@
 package org.rattencorp.ampersandCharGen;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
-@Disabled("will figure this out")
+
+@ActiveProfiles("test")
 @SpringBootTest
 class AmpersandCharGenApplicationTests {
 
