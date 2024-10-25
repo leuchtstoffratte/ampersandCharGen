@@ -52,9 +52,35 @@ public class AttributeCli {
 
 
     @ShellMethod("assign-STR")
-    public String assignSTR(String shouldBeInt) {
+    public String assignStr(String shouldBeInt) {
         return assignAttribute(shouldBeInt, AmpersandAttribute.STR);
     }
+
+    @ShellMethod("assign-DEX")
+    public String assignDex(String shouldBeInt) {
+        return assignAttribute(shouldBeInt, AmpersandAttribute.DEX);
+    }
+
+    @ShellMethod("assign-CON")
+    public String assignCon(String shouldBeInt) {
+        return assignAttribute(shouldBeInt, AmpersandAttribute.CON);
+    }
+
+    @ShellMethod("assign-INT")
+    public String assignInt(String shouldBeInt) {
+        return assignAttribute(shouldBeInt, AmpersandAttribute.INT);
+    }
+
+    @ShellMethod("assign-WIS")
+    public String assignWis(String shouldBeInt) {
+        return assignAttribute(shouldBeInt, AmpersandAttribute.WIS);
+    }
+
+    @ShellMethod("assign-CHAR")
+    public String assignChar(String shouldBeInt) {
+        return assignAttribute(shouldBeInt, AmpersandAttribute.CHAR);
+    }
+
 
 
     public String assignAttribute(String shouldBeInt, AmpersandAttribute attribute) {
