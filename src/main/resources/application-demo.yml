@@ -1,0 +1,10 @@
+
+spring:
+  config:
+    activate:
+      on-profile: demo
+  shell:
+    interactive:
+      enabled: true
+    script:
+      enabled: false

@@ -1,20 +1,17 @@
 package org.rattencorp.ampersandCharGen.cli;
 
+import jakarta.annotation.Resource;
 import org.rattencorp.ampersandCharGen.core.attributes.AmpersandAttribute;
 import org.rattencorp.ampersandCharGen.services.AmpersandAttributeGenerator;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 
 @ShellComponent
 public class AttributeCli {
 
-    private final AmpersandAttributeGenerator ampersandAttributeGenerator;
+    @Resource(name ="myRenamedService")
+    private AmpersandAttributeGenerator ampersandAttributeGenerator;
 
-    @Autowired
-    AttributeCli(AmpersandAttributeGenerator ampersandAttributeGenerator) {
-        this.ampersandAttributeGenerator = ampersandAttributeGenerator;
-    }
 
 
     @ShellMethod("generate a new set of values to choose assginments from")

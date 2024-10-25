@@ -1,14 +1,3 @@
 spring:
   application:
     name: AmpersandCharGen
-
----
-spring:
-  config:
-    activate:
-      on-profile: test
-  shell:
-    interactive:
-      enabled: false
-    script:
-      enabled: false

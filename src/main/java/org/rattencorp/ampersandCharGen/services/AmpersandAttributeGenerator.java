@@ -3,6 +3,7 @@ package org.rattencorp.ampersandCharGen.services;
 import org.rattencorp.ampersandCharGen.core.attributes.AmpersandAttribute;
 import org.rattencorp.ampersandCharGen.core.attributes.AmpersandAttributeAssignmentImpl;
 import org.rattencorp.core.attributes.AttributeValueGenerator;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,7 @@ import java.util.List;
 /**
  * Generate values and allow for the distribution of these values among the attributes by user input
  */
-@Service
+@Service("myRenamedService")
 public class AmpersandAttributeGenerator {
 
     private final AttributeValueGenerator<AmpersandAttribute> attributeValueGenerator;
@@ -22,6 +23,11 @@ public class AmpersandAttributeGenerator {
 
 
     @Autowired
+    AmpersandAttributeGenerator(ObjectProvider<AttributeValueGenerator<AmpersandAttribute>> attributeValueGeneratorObjectProvider) {
+        this.attributeValueGenerator = attributeValueGeneratorObjectProvider.getIfAvailable();
+        this.currentAssignment = new AmpersandAttributeAssignmentImpl();
+    }
+
     AmpersandAttributeGenerator(AttributeValueGenerator<AmpersandAttribute> attributeValueGenerator) {
         this.attributeValueGenerator = attributeValueGenerator;
         this.currentAssignment = new AmpersandAttributeAssignmentImpl();

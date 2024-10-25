@@ -5,6 +5,7 @@ import org.rattencorp.ampersandCharGen.core.attributes.valuegens.AmpersandAttrib
 import org.rattencorp.core.CoreSpringConfig;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.annotation.Profile;
 
 @SpringBootApplication
 public class AmpersandCharGenApplication {
@@ -12,6 +13,7 @@ public class AmpersandCharGenApplication {
 	public static void main(String[] args) {
 
 		new SpringApplicationBuilder(AmpersandCharGenApplication.class, CoreSpringConfig.class, AmpersandAttributeValueGeneratorConfig.class)
+				.profiles("ampersand-char-gen", "demo")
 			.run(args);
 
 	}
