@@ -1,0 +1,13 @@
+attribute:
+  generatorType: 3D6
+
+
+spring:
+  config:
+    activate:
+      on-profile: random
+  shell:
+    interactive:
+      enabled: true
+    script:
+      enabled: false
