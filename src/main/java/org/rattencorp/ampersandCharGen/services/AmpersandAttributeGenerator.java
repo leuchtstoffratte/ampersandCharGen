@@ -35,6 +35,7 @@ public class AmpersandAttributeGenerator {
 
 
     public void generateAttributeValues(){
+        currentAssignment.getAvailableValues().clear();
         currentAssignment.getAvailableValues()
                 .addAll(
                         Arrays.stream(attributeValueGenerator.generateValues())
