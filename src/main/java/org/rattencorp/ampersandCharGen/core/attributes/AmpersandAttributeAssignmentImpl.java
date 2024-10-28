@@ -38,6 +38,15 @@ public class AmpersandAttributeAssignmentImpl implements AttributeAssignement<Am
         attributes.put(attribute,value);
     }
 
+    @Override
+    public void wipeAssignments() {
+
+        for (AmpersandAttribute attribute : attributes.keySet()) {
+            assignAttribute(attribute, 0);
+        }
+
+    }
+
 
     @Override
     public boolean equals(Object obj) {

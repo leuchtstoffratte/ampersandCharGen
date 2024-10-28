@@ -41,9 +41,8 @@ public class AmpersandAttributeGenerator {
                         Arrays.stream(attributeValueGenerator.generateValues())
                                 .collect(ArrayList::new, ArrayList::add, ArrayList::addAll)
                 );
+        currentAssignment.wipeAssignments(); //otherwise the previous values might persist through already assigned values
     }
-
-    
 
     public List<Integer> getAvailableValues() {
         return currentAssignment.getAvailableValues();
