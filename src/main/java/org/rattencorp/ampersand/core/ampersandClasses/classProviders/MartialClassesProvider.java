@@ -1,7 +1,5 @@
 package org.rattencorp.ampersand.core.ampersandClasses.classProviders;
 
-import org.rattencorp.ampersand.core.ampersandClasses.coreClasses.Fighter;
-import org.rattencorp.ampersand.core.ampersandClasses.coreClasses.Rogue;
 import org.rattencorp.ampersandlike.classes.AmpersandClass;
 import org.rattencorp.ampersandlike.classes.MartialClass;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -5,6 +5,6 @@ import java.util.Set;
 
 public interface AmpersandClassProvider {
 
-    public Set<Class<? extends AmpersandClass>> getAmpersandClasses();
+    Set<Class<? extends AmpersandClass>> getAmpersandClasses();
 
 }

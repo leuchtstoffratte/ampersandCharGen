@@ -10,8 +10,6 @@ public interface AttributeAssignment<A extends Attribute> extends Serializable {
     /**
      * establish assigment between attribute and value
      *
-     * @param attribute
-     * @param value
      */
     void assignAttribute(A attribute, int value);
 

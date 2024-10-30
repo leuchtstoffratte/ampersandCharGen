@@ -7,7 +7,6 @@ import org.rattencorp.ampersandlike.classes.AmpersandClass;
 
 import java.util.function.Predicate;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class AmpersandCharacterTest {
 
