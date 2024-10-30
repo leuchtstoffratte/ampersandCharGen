@@ -1,18 +1,17 @@
 package org.rattencorp.ampersand.ampersandCharGen.character;
 
 import org.rattencorp.ampersand.core.attributes.AmpersandAttribute;
-import org.rattencorp.ampersand.core.attributes.AmpersandAttributeAssignmentImpl;
 import org.rattencorp.ampersandlike.classes.AmpersandClass;
-import org.rattencorp.core.attributes.AttributeAssignement;
+import org.rattencorp.core.attributes.AttributeAssignment;
 
 import java.util.Stack;
 
 public final class AmpersandCharacter {
 
-    private final AttributeAssignement<AmpersandAttribute> attributeAssignment;
+    private final AttributeAssignment<AmpersandAttribute> attributeAssignment;
     private final Stack<AmpersandClass> classes;
 
-    public AmpersandCharacter(AttributeAssignement<AmpersandAttribute> attributeAssignment) {
+    public AmpersandCharacter(AttributeAssignment<AmpersandAttribute> attributeAssignment) {
         this.attributeAssignment = attributeAssignment;
         classes = new Stack<>();
     }
@@ -43,7 +42,7 @@ public final class AmpersandCharacter {
         return classes.size() != getClassLevel(classes.getFirst().getClass());
     }
 
-    public AttributeAssignement<AmpersandAttribute> getAttributeAssignment() {
+    public AttributeAssignment<AmpersandAttribute> getAttributeAssignment() {
         return attributeAssignment;
     }
 }

@@ -1,6 +1,6 @@
 package org.rattencorp.ampersand.core.attributes;
 
-import org.rattencorp.core.attributes.AttributeAssignement;
+import org.rattencorp.core.attributes.AttributeAssignment;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Container class for the attribute values of a character
  */
-public class AmpersandAttributeAssignmentImpl implements AttributeAssignement<AmpersandAttribute> {
+public class AmpersandAttributeAssignmentImpl implements AttributeAssignment<AmpersandAttribute> {
 
     private final EnumMap<AmpersandAttribute, Integer> attributes;
 

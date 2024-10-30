@@ -1,6 +1,8 @@
 package org.rattencorp.core.attributes;
 
-public interface AttributeAssignement <A extends Attribute> {
+import java.io.Serializable;
+
+public interface AttributeAssignment<A extends Attribute> extends Serializable {
 
 
     int getValueForAttribute(A attribute);
