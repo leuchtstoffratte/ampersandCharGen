@@ -1,7 +1,7 @@
-package org.rattencorp.ampersandCharGen.services;
+package org.rattencorp.ampersand.ampersandCharGen.services;
 
-import org.rattencorp.ampersandCharGen.core.attributes.AmpersandAttribute;
-import org.rattencorp.ampersandCharGen.core.attributes.AmpersandAttributeAssignmentImpl;
+import org.rattencorp.ampersand.core.attributes.AmpersandAttribute;
+import org.rattencorp.ampersand.core.attributes.AmpersandAttributeAssignmentImpl;
 import org.rattencorp.core.attributes.AttributeValueGenerator;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;

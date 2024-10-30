@@ -1,12 +1,11 @@
-package org.rattencorp.ampersandCharGen.services;
+package org.rattencorp.ampersand.ampersandCharGen.services;
 
 import org.assertj.core.api.Assertions;
-import org.assertj.core.api.Assumptions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
-import org.rattencorp.ampersandCharGen.core.attributes.AmpersandAttribute;
-import org.rattencorp.ampersandCharGen.core.attributes.AmpersandAttributeAssignmentImpl;
+import org.rattencorp.ampersand.core.attributes.AmpersandAttribute;
+import org.rattencorp.ampersand.core.attributes.AmpersandAttributeAssignmentImpl;
 
 import java.util.List;
 

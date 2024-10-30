@@ -1,4 +1,4 @@
-package org.rattencorp.ampersandCharGen.core.attributes.valuegens;
+package org.rattencorp.ampersand.ampersandCharGen.attributes.valuegens;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,9 +11,6 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.env.Environment;
-
-import java.util.Collections;
-import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
 class AmpersandAttributeValueGeneratorConfigTest {

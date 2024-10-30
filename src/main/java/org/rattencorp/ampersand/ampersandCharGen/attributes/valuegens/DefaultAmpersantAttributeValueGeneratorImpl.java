@@ -1,8 +1,7 @@
-package org.rattencorp.ampersandCharGen.core.attributes.valuegens;
+package org.rattencorp.ampersand.ampersandCharGen.attributes.valuegens;
 
-import org.rattencorp.ampersandCharGen.core.attributes.AmpersandAttribute;
+import org.rattencorp.ampersand.core.attributes.AmpersandAttribute;
 import org.rattencorp.core.attributes.AttributeValueGenerator;
-import org.springframework.stereotype.Component;
 
 //@Component
 public class DefaultAmpersantAttributeValueGeneratorImpl implements AttributeValueGenerator<AmpersandAttribute> {

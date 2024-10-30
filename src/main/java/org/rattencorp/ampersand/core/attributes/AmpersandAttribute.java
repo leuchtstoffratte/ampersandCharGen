@@ -1,4 +1,4 @@
-package org.rattencorp.ampersandCharGen.core.attributes;
+package org.rattencorp.ampersand.core.attributes;
 
 import org.rattencorp.core.attributes.Attribute;
 

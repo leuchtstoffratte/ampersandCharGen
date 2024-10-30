@@ -1,8 +1,8 @@
-package org.rattencorp.ampersandCharGen.cli;
+package org.rattencorp.ampersand.ampersandCharGen.cli;
 
 import jakarta.annotation.Resource;
-import org.rattencorp.ampersandCharGen.core.attributes.AmpersandAttribute;
-import org.rattencorp.ampersandCharGen.services.AmpersandAttributeGenerator;
+import org.rattencorp.ampersand.core.attributes.AmpersandAttribute;
+import org.rattencorp.ampersand.ampersandCharGen.services.AmpersandAttributeGenerator;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 

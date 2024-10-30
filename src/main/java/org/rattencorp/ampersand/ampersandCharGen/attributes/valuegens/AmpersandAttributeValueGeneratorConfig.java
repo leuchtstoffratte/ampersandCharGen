@@ -1,6 +1,6 @@
-package org.rattencorp.ampersandCharGen.core.attributes.valuegens;
+package org.rattencorp.ampersand.ampersandCharGen.attributes.valuegens;
 
-import org.rattencorp.ampersandCharGen.core.attributes.AmpersandAttribute;
+import org.rattencorp.ampersand.core.attributes.AmpersandAttribute;
 import org.rattencorp.core.attributes.AttributeValueGenerator;
 import org.rattencorp.core.dice.D6;
 import org.springframework.beans.factory.annotation.Autowired;
