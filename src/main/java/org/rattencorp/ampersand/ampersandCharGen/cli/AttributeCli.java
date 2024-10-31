@@ -9,7 +9,7 @@ import org.springframework.shell.standard.ShellMethod;
 @ShellComponent
 public class AttributeCli {
 
-    @Resource(name ="myRenamedService")
+    @Resource(name ="attributeGeneration")
     private AmpersandAttributeGenerator ampersandAttributeGenerator;
 
 

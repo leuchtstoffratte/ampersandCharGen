@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Generate values and allow for the distribution of these values among the attributes by user input
  */
-@Service("myRenamedService")
+@Service("attributeGeneration")
 public class AmpersandAttributeGenerator {
 
     private final AttributeValueGenerator<AmpersandAttribute> attributeValueGenerator;
