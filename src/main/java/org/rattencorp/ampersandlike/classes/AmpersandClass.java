@@ -6,7 +6,9 @@ import java.io.Serializable;
 import java.util.function.Predicate;
 
 /**
- * Classes and subclasses should implement this
+ * AmpersandClasses and their subclasses should implement this<br>
+ * AmpersandClasses are intended as stateless singleton tokens
+ *
  */
 public interface AmpersandClass extends Serializable {
 

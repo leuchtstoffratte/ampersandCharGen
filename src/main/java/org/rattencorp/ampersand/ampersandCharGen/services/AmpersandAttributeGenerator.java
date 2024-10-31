@@ -48,10 +48,6 @@ public class AmpersandAttributeGenerator {
         return currentAssignment.getAvailableValues();
     }
 
-    public AttributeValueGenerator<AmpersandAttribute> getAttributeValueGenerator() {
-        return attributeValueGenerator;
-    }
-
     public AmpersandAttributeAssignmentImpl getCurrentAssignment() {
         return currentAssignment;
     }
