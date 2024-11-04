@@ -19,7 +19,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
-import java.util.function.Predicate;
 
 @ExtendWith(MockitoExtension.class)
 class AmpersandClassAssignerTest {
@@ -38,48 +37,13 @@ class AmpersandClassAssignerTest {
     @Mock
     private AmpersandCharacter ampersandCharacterMock;
 
-
-    private static class TestAmpersandClassAlwaysPossible implements AmpersandClass {
-
-        @Override
-        public Predicate<AmpersandCharacter> prerequisiteSupplier() {
-            return ignored -> true;
-        }
-    }
-
-    private static class TestAmpersandClassAlwaysFine implements AmpersandClass {
-
-        @Override
-        public Predicate<AmpersandCharacter> prerequisiteSupplier() {
-            return ignored -> true;
-        }
-    }
-
-    private static class TestAmpersandClassNeverPossible implements AmpersandClass {
-
-        @Override
-        public Predicate<AmpersandCharacter> prerequisiteSupplier() {
-            return ignored -> false;
-        }
-    }
-
-    private static class TestAmpersandClassNeedsInt implements AmpersandClass {
-
-        @Override
-        public Predicate<AmpersandCharacter> prerequisiteSupplier() {
-            return c -> c.getAttributeAssignment().getValueForAttribute(AmpersandAttribute.INT) > 12;
-        }
-    }
-
-
-
     private static final AmpersandAttributeAssignmentImpl ATTRIBUTE_DUMB = new AmpersandAttributeAssignmentImpl();
     private static final AmpersandAttributeAssignmentImpl ATTRIBUTE_SMART = new AmpersandAttributeAssignmentImpl();
 
-    private static final TestAmpersandClassNeverPossible NEVER_POSSIBLE = new TestAmpersandClassNeverPossible();
-    private static final TestAmpersandClassAlwaysPossible ALWAYS_POSSIBLE = new TestAmpersandClassAlwaysPossible();
-    private static final TestAmpersandClassAlwaysFine ALWAYS_FINE = new TestAmpersandClassAlwaysFine();
-    private static final TestAmpersandClassNeedsInt NEEDS_INT = new TestAmpersandClassNeedsInt();
+    private static final ServiceTestInfrastructure.TestAmpersandClassNeverPossible NEVER_POSSIBLE = new ServiceTestInfrastructure.TestAmpersandClassNeverPossible();
+    private static final ServiceTestInfrastructure.TestAmpersandClassAlwaysPossible ALWAYS_POSSIBLE = new ServiceTestInfrastructure.TestAmpersandClassAlwaysPossible();
+    private static final ServiceTestInfrastructure.TestAmpersandClassAlwaysFine ALWAYS_FINE = new ServiceTestInfrastructure.TestAmpersandClassAlwaysFine();
+    private static final ServiceTestInfrastructure.TestAmpersandClassNeedsInt NEEDS_INT = new ServiceTestInfrastructure.TestAmpersandClassNeedsInt();
 
 
     @BeforeAll
@@ -95,19 +59,19 @@ class AmpersandClassAssignerTest {
         testee = new AmpersandClassAssigner(List.of(ampersandClassProviderMock, otherAmpersandClassProviderMock), ctxMock);
 
         //Classes are stateless tokens that should never be anything but singletons
-        Mockito.doReturn(NEVER_POSSIBLE).when(ctxMock).getBean(TestAmpersandClassNeverPossible.class);
-        Mockito.doReturn(ALWAYS_POSSIBLE).when(ctxMock).getBean(TestAmpersandClassAlwaysPossible.class);
-        Mockito.doReturn(ALWAYS_FINE).when(ctxMock).getBean(TestAmpersandClassAlwaysFine.class);
-        Mockito.doReturn(NEEDS_INT).when(ctxMock).getBean(TestAmpersandClassNeedsInt.class);
+        Mockito.doReturn(NEVER_POSSIBLE).when(ctxMock).getBean(ServiceTestInfrastructure.TestAmpersandClassNeverPossible.class);
+        Mockito.doReturn(ALWAYS_POSSIBLE).when(ctxMock).getBean(ServiceTestInfrastructure.TestAmpersandClassAlwaysPossible.class);
+        Mockito.doReturn(ALWAYS_FINE).when(ctxMock).getBean(ServiceTestInfrastructure.TestAmpersandClassAlwaysFine.class);
+        Mockito.doReturn(NEEDS_INT).when(ctxMock).getBean(ServiceTestInfrastructure.TestAmpersandClassNeedsInt.class);
     }
 
 
     @Test
     void gettingAllClassesReturnsEachClassOnce() {
         //GIVEN
-        Mockito.doReturn(Set.of(TestAmpersandClassAlwaysPossible.class, TestAmpersandClassNeedsInt.class))
+        Mockito.doReturn(Set.of(ServiceTestInfrastructure.TestAmpersandClassAlwaysPossible.class, ServiceTestInfrastructure.TestAmpersandClassNeedsInt.class))
                 .when(ampersandClassProviderMock).getAmpersandClasses();
-        Mockito.doReturn(Set.of(TestAmpersandClassAlwaysFine.class, TestAmpersandClassNeedsInt.class, TestAmpersandClassNeverPossible.class))
+        Mockito.doReturn(Set.of(ServiceTestInfrastructure.TestAmpersandClassAlwaysFine.class, ServiceTestInfrastructure.TestAmpersandClassNeedsInt.class, ServiceTestInfrastructure.TestAmpersandClassNeverPossible.class))
                 .when(otherAmpersandClassProviderMock).getAmpersandClasses();
 
         //WHEN
@@ -128,9 +92,9 @@ class AmpersandClassAssignerTest {
     @Test
     void gettingOptionsForDumbCharacterShouldNotContainSmartOrNeverClasses() {
         //GIVEN
-        Mockito.doReturn(Set.of(TestAmpersandClassAlwaysPossible.class, TestAmpersandClassNeedsInt.class))
+        Mockito.doReturn(Set.of(ServiceTestInfrastructure.TestAmpersandClassAlwaysPossible.class, ServiceTestInfrastructure.TestAmpersandClassNeedsInt.class))
                 .when(ampersandClassProviderMock).getAmpersandClasses();
-        Mockito.doReturn(Set.of(TestAmpersandClassAlwaysFine.class, TestAmpersandClassNeedsInt.class, TestAmpersandClassNeverPossible.class))
+        Mockito.doReturn(Set.of(ServiceTestInfrastructure.TestAmpersandClassAlwaysFine.class, ServiceTestInfrastructure.TestAmpersandClassNeedsInt.class, ServiceTestInfrastructure.TestAmpersandClassNeverPossible.class))
                 .when(otherAmpersandClassProviderMock).getAmpersandClasses();
 
         Mockito.doReturn(ATTRIBUTE_DUMB).when(ampersandCharacterMock).getAttributeAssignment();
@@ -151,9 +115,9 @@ class AmpersandClassAssignerTest {
     @Test
     void gettingOptionsForSmartCharacterShouldNotNeverClasses() {
         //GIVEN
-        Mockito.doReturn(Set.of(TestAmpersandClassAlwaysPossible.class, TestAmpersandClassNeedsInt.class))
+        Mockito.doReturn(Set.of(ServiceTestInfrastructure.TestAmpersandClassAlwaysPossible.class, ServiceTestInfrastructure.TestAmpersandClassNeedsInt.class))
                 .when(ampersandClassProviderMock).getAmpersandClasses();
-        Mockito.doReturn(Set.of(TestAmpersandClassAlwaysFine.class, TestAmpersandClassNeedsInt.class, TestAmpersandClassNeverPossible.class))
+        Mockito.doReturn(Set.of(ServiceTestInfrastructure.TestAmpersandClassAlwaysFine.class, ServiceTestInfrastructure.TestAmpersandClassNeedsInt.class, ServiceTestInfrastructure.TestAmpersandClassNeverPossible.class))
                 .when(otherAmpersandClassProviderMock).getAmpersandClasses();
 
         Mockito.doReturn(ATTRIBUTE_SMART).when(ampersandCharacterMock).getAttributeAssignment();
@@ -176,8 +140,8 @@ class AmpersandClassAssignerTest {
         //GIVEN
         Mockito.doReturn(Collections.emptySet())
                 .when(ampersandClassProviderMock).getAmpersandClasses();
-        Mockito.doReturn(Set.of(TestAmpersandClassAlwaysPossible.class, TestAmpersandClassAlwaysFine.class,
-                        TestAmpersandClassNeedsInt.class, TestAmpersandClassNeverPossible.class))
+        Mockito.doReturn(Set.of(ServiceTestInfrastructure.TestAmpersandClassAlwaysPossible.class, ServiceTestInfrastructure.TestAmpersandClassAlwaysFine.class,
+                        ServiceTestInfrastructure.TestAmpersandClassNeedsInt.class, ServiceTestInfrastructure.TestAmpersandClassNeverPossible.class))
                 .when(otherAmpersandClassProviderMock).getAmpersandClasses();
 
         Mockito.doReturn(ATTRIBUTE_DUMB).when(ampersandCharacterMock).getAttributeAssignment();
