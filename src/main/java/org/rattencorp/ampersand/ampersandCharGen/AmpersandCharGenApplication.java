@@ -12,8 +12,9 @@ public class AmpersandCharGenApplication {
 
 	public static void main(String[] args) {
 
-		new SpringApplicationBuilder(AmpersandCharGenApplication.class, CoreSpringConfig.class,
-				AmpersandAttributeValueGeneratorConfig.class, AmpersandCoreConfig.class)
+		new SpringApplicationBuilder( CoreSpringConfig.class)
+				.child(AmpersandAttributeValueGeneratorConfig.class).sibling(AmpersandCoreConfig.class)
+				.child(AmpersandCharGenApplication.class)
 				.profiles("ampersand-char-gen", "random")
 			.run(args);
 
