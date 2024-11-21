@@ -1,4 +1,4 @@
-package org.rattencorp.ampersand.ampersandCharGen.cli;
+package org.rattencorp.ampersand.frontend.cli.ampersandCharGen;
 
 import jakarta.annotation.Resource;
 import org.rattencorp.ampersand.core.attributes.AmpersandAttribute;

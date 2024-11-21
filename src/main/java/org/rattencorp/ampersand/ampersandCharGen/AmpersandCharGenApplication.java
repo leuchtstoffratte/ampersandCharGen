@@ -3,6 +3,7 @@ package org.rattencorp.ampersand.ampersandCharGen;
 
 import org.rattencorp.ampersand.ampersandCharGen.attributes.valuegens.AmpersandAttributeValueGeneratorConfig;
 import org.rattencorp.ampersand.core.AmpersandCoreConfig;
+import org.rattencorp.ampersand.frontend.cli.CliFrontEnd;
 import org.rattencorp.core.CoreSpringConfig;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -14,7 +15,7 @@ public class AmpersandCharGenApplication {
 
 		new SpringApplicationBuilder( CoreSpringConfig.class)
 				.child(AmpersandAttributeValueGeneratorConfig.class).sibling(AmpersandCoreConfig.class)
-				.child(AmpersandCharGenApplication.class)
+				.child(AmpersandCharGenApplication.class).child(CliFrontEnd.class)
 				.profiles("ampersand-char-gen", "random")
 			.run(args);
 
